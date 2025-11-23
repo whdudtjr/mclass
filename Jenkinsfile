@@ -56,7 +56,7 @@ pipeline{
         stage('Remote Docker Build & Deploy'){
             steps{
                 sshagent(credentials:[env.SSH_CREDENTIALS_ID]){
-                    // 원격 서버에서 도커 컨테이너를 제거하고 새로 빌드 및 실행
+                    // 원격 서버에서 도커 컨테이너를 제거하고 새로 빌드 및 실행이요
                     sh """
 ssh -i /var/lib/jenkins/.ssh/jenkins_rsa_key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${REMOTE_USER}@${REMOTE_HOST}<<EoF
 cd ${REMOTE_DIR} || exit 1
